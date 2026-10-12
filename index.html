@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!-- Lingua della pagina -->
+<html lang="en">
+<head>
+    <!-- Charset: definisce la codifica dei caratteri -->
+    <meta charset="UTF-8">
+
+    <!-- Viewport: rende la pagina responsive su dispositivi mobili -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Descrizione della pagina -->
+    <meta name="description" content="Pagina HTML per Bob la Formica">
+
+    <!-- Autore della pagina -->
+    <meta name="author" content="MattVendra">
+
+    <!-- Parole chiave -->
+    <meta name="keywords" content="Bob, Ant, Grisby, Rado, Hibiki, Misu, Zuppa di Misu, V">
+
+    <!-- Titolo della pagina -->
+    <title>Lost Pet Ant Bob!</title>
+
+    <!-- Icona della pagina -->
+    <link rel="icon" href="assets/images/icon.svg" type="image/x-icon">
+
+    <!-- Bootstrap  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+        rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  
+    <!-- CSS personalizzato -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Contenitore A4 -->
+    <div class="page-a4">
+
+        <!-- Header/Titolo del biglietto -->
+        <header class="title-section">
+            <h1>Lost Pet Ant <strong>Bob</strong>!!</h1>
+            <h2>Answer to the Name <strong>Bob</strong></h2>
+        </header>
+
+        <!-- Main content -->
+        <main class="container text-center">
+            <div class="image-wrapper">
+                <img src="assets/images/bob_w.jpg" alt="Immagine di Bob la Formica" class="ant-image">
+
+                <!-- QR Code: https://www.qrcode-monkey.com/ -->
+                <img src="assets/images/qr-code.svg" alt="QR Code info Bob..." class="qr-on-image">
+            </div>
+
+            <!-- Bottone formica per stampa -->
+            <div class="text-end mb-3">
+                <button
+                    type="button"
+                    class="print-ant-btn"
+                    title="Print poster"
+                    aria-label="Print poster">
+                </button>
+            </div>
+
+            <!-- Macchia animata -->
+            <div id="splash" class="splash"></div>
+            <!-- Audio nascosto -->
+            <audio id="click-sound" src="assets/fahhh.mp3" preload="auto"></audio>
+
+            <!-- Sezione dettagli -->
+            <section class="details-section">
+                <h3>Details about <strong>Bob:</strong></h3>
+
+                <!-- Griglia dei dettagli: 2 colonne x 3 righe -->
+                <div class="row text-start"> 
+                    <!-- Cella 1 -->
+                    <div class="col border p-3">
+                        <h5>Last seen:</h5> 
+                        <p>By the Ginger's Farm</p>
+                    </div>
+                    <!-- Cella 2 -->
+                    <div class="col border p-3">
+                        <h5>Color:</h5>
+                        <p>Solid Black</p>
+                    </div>
+                </div>
+                <div class="row text-start">
+                    <!-- Cella 3 -->
+                    <div class="col border p-3">
+                        <h5>When:</h5>
+                        <p>Wednesday, December 10, 2025</p>
+                    </div>
+                    <!-- Cella 4 -->
+                    <div class="col border p-3">
+                        <p>If found, <i>please</i> try to comfort him 
+                        and maybe give him some Grisby</p>
+                    </div>
+                </div>
+                <div class="row text-start">
+                    <!-- Cella 5 -->
+                    <div class="col border p-3">
+                        <h5>Age:</h5>
+                        <p>No idea, but he seems very mature</p>
+                    </div>
+                    <!-- Cella 6 con link -->
+                    <div class="col border p-3 details-link">
+                        <h5>Contact me:</h5>
+                        <p><a href="https://www.instagram.com/">Instagram</a></p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-dark text-white text-center py-3">
+            © 2025 MattVendra. Tutti i diritti riservati.
+        </footer>
+    </div>
+
+    <!-- JS personalizzato -->
+    <script src="script.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>

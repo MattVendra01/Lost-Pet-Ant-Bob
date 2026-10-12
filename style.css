@@ -1,0 +1,216 @@
+/* Stile interno per biglietto */
+body {
+    background: linear-gradient(135deg, #2b1055, #0b1c3d); /* Sfondo della pagina sfumato */
+    color: black; 
+    font-family: Tahoma, Geneva, sans-serif;
+}
+
+/* Simulazione Foglio A4 */
+.page-a4 {
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.25); /* effetto foglio */
+    margin: 20px auto; /* centrato */
+    min-height: 297mm;
+    padding: 20mm;
+    position: relative;
+    width: 210mm; 
+}
+
+/* Stile del titolo e sottotitolo */
+.title-section {
+    background-color: #d3d3d3; /* #e6e6e6; */
+    margin-bottom: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.title-section h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+.title-section h2 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin: 5px 0 0 0;
+}
+
+.container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Wrapper immagine */
+.image-wrapper {
+    position: relative;
+}
+
+/* Immagine */
+.ant-image { 
+    display: block;
+    height: auto;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    z-index: 0;
+}
+/* Watermarks
+.watermark {
+    ... 
+} */
+
+/* QRCode: https://www.qrcode-monkey.com/ */
+.qr-on-image {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 90px;           /* perfetto per scansione */
+    background: white;
+    padding: 4px;
+    border: 2px solid #000;
+}
+
+
+/* Stile della sezione griglia */
+.details-section {
+    background-color: #d3d3d3; /* #e6e6e6; */
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.details-section h3 { /* Stile titolo griglia */
+    margin-bottom: 20px; 
+    text-align: center;
+}
+.details-section h5 { /* Stile titolo celle della griglia */
+    font-weight: bold; /* grassetto */
+    margin-bottom: 5px;
+    text-align: left; /* center; */ 
+}
+
+.details-section .col {
+    border: 1px solid #000;
+    padding: 15px;
+    text-align: left; /* testo allineato a sinistra */
+}
+
+/* Link stile */
+.details-link a {
+    color: blue;
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Bottone rotondo con immagine di formica */
+.print-ant-btn {
+    animation: walk 2s 60; /* animazione movimento */
+    background-image: url('assets/images/icon.svg'); /* immagine della formica */
+    background-position: center;
+    background-size: cover; /* riempie il bottone */
+    border: none; /* senza bordo */
+    border-radius: 50%; /* rotondo */
+    bottom: 30px;
+    height: 60px; /* altezza del bottone */
+    outline: none;
+    position: fixed;
+    right: calc(45% - 105mm); /* allineato al bordo destro A4 */
+    width: 60px; /* larghezza del bottone */
+    z-index: 1000; /* sempre sopra gli altri elementi */  
+}
+
+/* Pulsante animato come una formica */
+@keyframes walk {
+    0% { transform: translateX(0) translateY(0); }
+    25% { transform: translateX(2px) translateY(-1px); }
+    50% { transform: translateX(4px) translateY(0); }
+    75% { transform: translateX(2px) translateY(1px); }
+    100% { transform: translateX(0) translateY(0); }
+}
+
+/* Effetto hover (leggero zoom) */
+.print-ant-btn:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s;
+}
+
+/* Stampa su A4 */
+@media print {
+    body {
+        background: white;
+        margin: 0;
+    }
+
+    .page-a4 {
+        box-shadow: none;
+        margin: 0;
+        min-height: auto;
+        padding: 0;
+        width: auto;
+    }
+
+    /* Immagine e Watermark */
+    .image-wrapper { /* .ant-image */
+        display: block;
+        height: auto;
+        max-width: 99%; 
+    }
+
+    /* Pulsante non visibile in stampa */
+    .print-ant-btn, .splash {
+        display: none !important;
+    }
+
+    /* Forza la stampa dei colori di sfondo */
+    .title-section, .details-section {
+        -webkit-print-color-adjust: exact;
+        background-color: #d3d3d3 !important;
+    }
+}
+
+/* Stile della macchia */
+.splash {
+    background-color: rgba(255, 0, 0, 0.5); /* rosso semitrasparente */
+    border-radius: 50%;    
+    height: 80px;    
+    opacity: 0;    
+    pointer-events: none; /* non interferisce con click */    
+    position: fixed;
+    transform: scale(0);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    width: 80px;    
+    z-index: 1001;
+}
+
+/* Responsive layout */
+@media screen and (max-width: 850px) {
+    .page-a4 {
+        width: 95%;
+        min-height: auto;
+        padding: 15px;
+    }
+
+    .print-ant-btn {
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .title-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .title-section h2 {
+        font-size: 1.2rem;
+    }
+
+    .qr-on-image {
+        width: 65px;
+        bottom: 8px;
+        right: 8px;
+    }
+}
